@@ -1,0 +1,4 @@
+alias di='docker images'
+alias dpn='docker ps --format "{{.ID}} {{.Names}}"'
+alias dpns='docker rm -f `docker ps --format "{{.ID}}"`'
+alias de='docker-enter'
