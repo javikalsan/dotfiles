@@ -1,0 +1,4 @@
+alias l='ls'
+alias ll='ls -lah'
+alias pp='ping a.io'
+alias nst='netstat -tulpen'
