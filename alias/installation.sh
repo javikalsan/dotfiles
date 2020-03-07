@@ -7,9 +7,9 @@ LOAD_ALIASES_CODE=$(cat << EOF
 
 # Load all .alias files from dotfiles
 for file in ${DOTFILES_ALIAS_DIRECTORY}/*; do
-    if [ ${file: -6} == ".alias" ]
+    if [ \${file: -6} == ".alias" ]
     then
-        source $file
+        source \$file
     fi
 done
 
