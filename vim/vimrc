@@ -1,0 +1,70 @@
+""""""""""""""""""""""
+" base configuration "
+""""""""""""""""""""""
+set number
+set nocompatible
+syntax on
+set nowrap
+set encoding=utf8
+set ruler
+set laststatus=2
+set mouse=a
+
+filetype plugin indent on
+set tabstop=4 " show existing tab with 4 spaces width
+set shiftwidth=4 " when indenting with '>', use 4 spaces width
+set expandtab " On pressing tab, insert 4 spaces
+
+" Use 2 spaces to indent JS and Typescript files
+autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab
+autocmd Filetype typescript setlocal ts=2 sw=2 sts=0 expandtab
+
+"""""""""""""""
+" key mapping "
+"""""""""""""""
+" Fix behavior in insert mode inside tmux session
+nnoremap <Esc>A <up>
+nnoremap <Esc>B <down>
+nnoremap <Esc>C <right>
+nnoremap <Esc>D <left>
+inoremap <Esc>A <up>
+inoremap <Esc>B <down>
+inoremap <Esc>C <right>
+inoremap <Esc>D <left>
+
+"""""""""""""""""""""""""
+" plugins configuration "
+"""""""""""""""""""""""""
+set rtp+=~/.vim/bundle/Vundle.vim " set the runtime path to include Vundle and initialize
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim' " plugins manager
+Plugin 'scrooloose/nerdtree' " file browser
+Plugin 'ctrlpvim/ctrlp.vim' " open files CTRL + P
+Plugin 'tacahiroy/ctrlp-funky' " open files CTRL + P
+Plugin 'ivalkeen/vim-ctrlp-tjump' " open files CTRL + P
+Plugin 'klen/python-mode' " python mode
+let g:pymode_options_colorcolumn = 0
+
+Plugin 'bling/vim-airline' " lean & mean status/tabline for vim that's light as air
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
+Plugin 'jiangmiao/auto-pairs' " insert or delete brackets, parens, quotes in pair
+Plugin 'airblade/vim-gitgutter' " git diff in the 'gutter' (sign column)
+Plugin 'skielbasa/vim-material-monokai' " monokai theme
+Plugin 'jaxbot/semantic-highlight' " semantic highlight
+Plugin 'ervandew/supertab' " supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs (:help ins-completion)
+Plugin 'davidhalter/jedi-vim' " awesome Python autocompletion with VIM
+Plugin 'honza/vim-snippets' " this repository contains snippets files for various programming languages
+
+call vundle#end()
+
+"""""""""""""""""""""""
+" theme configuration "
+"""""""""""""""""""""""
+set background=dark
+set termguicolors
+colorscheme material-monokai
+
+
