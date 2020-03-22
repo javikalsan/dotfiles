@@ -53,7 +53,7 @@ let g:airline_powerline_fonts = 1
 Plugin 'jiangmiao/auto-pairs' " insert or delete brackets, parens, quotes in pair
 Plugin 'airblade/vim-gitgutter' " git diff in the 'gutter' (sign column)
 Plugin 'skielbasa/vim-material-monokai' " monokai theme
-Plugin 'jaxbot/semantic-highlight' " semantic highlight
+Plugin 'jaxbot/semantic-highlight.vim' " semantic highlight
 Plugin 'ervandew/supertab' " supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs (:help ins-completion)
 Plugin 'davidhalter/jedi-vim' " awesome Python autocompletion with VIM
 Plugin 'honza/vim-snippets' " this repository contains snippets files for various programming languages
