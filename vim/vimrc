@@ -32,7 +32,10 @@ inoremap <Esc>B <down>
 inoremap <Esc>C <right>
 inoremap <Esc>D <left>
 
-"""""""""""""""""""""""""
+" map copy to clipboard to be CTRL + C
+:vmap <C-C> "+y
+
+""""""""""""""""""""""""
 " plugins configuration "
 """""""""""""""""""""""""
 set rtp+=~/.vim/bundle/Vundle.vim " set the runtime path to include Vundle and initialize
@@ -40,6 +43,9 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim' " plugins manager
 Plugin 'scrooloose/nerdtree' " file browser
+noremap <c-X> :NERDTreeToggle<CR>
+map  <C-n> :tabnew<CR>
+
 Plugin 'ctrlpvim/ctrlp.vim' " open files CTRL + P
 Plugin 'tacahiroy/ctrlp-funky' " open files CTRL + P
 Plugin 'ivalkeen/vim-ctrlp-tjump' " open files CTRL + P
