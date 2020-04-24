@@ -1,19 +1,34 @@
 """"""""""""""""""""""
 " base configuration "
 """"""""""""""""""""""
-set number
+set number " Show line number
 set nocompatible
-syntax on
-set nowrap
-set encoding=utf8
+syntax on " Syntax highlighting
+set nowrap " Do not wrap long lines
+set encoding=utf8 " UTF-8 encoding
 set ruler
-set laststatus=2
-set mouse=a
-
+set mouse=a " Automatically enable mouse usage
 filetype plugin indent on
 set tabstop=4 " show existing tab with 4 spaces width
+set softtabstop=4
 set shiftwidth=4 " when indenting with '>', use 4 spaces width
 set expandtab " On pressing tab, insert 4 spaces
+set smarttab
+set autoindent
+" set cursorline
+set ttyfast                                             " Improves scroll performance
+set ignorecase                                          " Case insensitive searches
+set hlsearch                                            " Highlight search results
+set incsearch                                           " Incremental searches
+
+" folding
+set foldmethod=indent
+set foldlevel=99
+" set foldclose=all
+
+" list
+" set list
+" set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:⏎,precedes:«,extends:»
 
 " Use 2 spaces to indent JS and Typescript files
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab
@@ -32,8 +47,25 @@ inoremap <Esc>B <down>
 inoremap <Esc>C <right>
 inoremap <Esc>D <left>
 
+" go to tabs
+nnoremap <Leader>1 1gt
+nnoremap <Leader>2 2gt
+nnoremap <Leader>3 3gt
+nnoremap <Leader>4 4gt
+nnoremap <Leader>5 5gt
+nnoremap <Leader>6 6gt
+nnoremap <Leader>7 7gt
+nnoremap <Leader>8 8gt
+nnoremap <Leader>9 9gt
+
 " map copy to clipboard to be CTRL + C
 :vmap <C-C> "+y
+
+" map space key as leader
+map <Space> <Leader>
+
+" clear search highlight
+nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 
 """"""""""""""""""""""""
 " plugins configuration "
@@ -44,25 +76,32 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim' " plugins manager
 Plugin 'scrooloose/nerdtree' " file browser
 noremap <c-X> :NERDTreeToggle<CR>
-map  <C-n> :tabnew<CR>
+nnoremap <Leader>f :NERDTreeFind<Enter>
 
-Plugin 'ctrlpvim/ctrlp.vim' " open files CTRL + P
-Plugin 'tacahiroy/ctrlp-funky' " open files CTRL + P
-Plugin 'ivalkeen/vim-ctrlp-tjump' " open files CTRL + P
-Plugin 'klen/python-mode' " python mode
+map  <C-n> :tabnew<CR>
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+
+"Plugin 'klen/python-mode' " python mode
 let g:pymode_options_colorcolumn = 0
 
 Plugin 'bling/vim-airline' " lean & mean status/tabline for vim that's light as air
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
-Plugin 'jiangmiao/auto-pairs' " insert or delete brackets, parens, quotes in pair
+"Plugin 'jiangmiao/auto-pairs' " insert or delete brackets, parens, quotes in pair
 Plugin 'airblade/vim-gitgutter' " git diff in the 'gutter' (sign column)
 Plugin 'skielbasa/vim-material-monokai' " monokai theme
 Plugin 'jaxbot/semantic-highlight.vim' " semantic highlight
 Plugin 'ervandew/supertab' " supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs (:help ins-completion)
 Plugin 'davidhalter/jedi-vim' " awesome Python autocompletion with VIM
 Plugin 'honza/vim-snippets' " this repository contains snippets files for various programming languages
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fzf
+Plugin 'junegunn/fzf.vim'
+map ; :Files<CR> " use ; to search project files
+
+Plugin 'hynek/vim-python-pep8-indent' " Python linter
+Plugin 'mkitt/tabline.vim' " Configure tabs within Terminal Vim
 
 call vundle#end()
 
@@ -70,7 +109,20 @@ call vundle#end()
 " theme configuration "
 """""""""""""""""""""""
 set background=dark
-set termguicolors
 colorscheme material-monokai
 
+"""""""""""""
+" functions "
+"""""""""""""
+" Remove all trailing spaces on save
+" http://vimcasts.org/episodes/tidying-whitespace
+function! Preserve(command)
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    execute a:command
+    let @/=_s
+    call cursor(l, c)
+endfunction
 
+autocmd BufWritePre * :call Preserve("%s/\\s\\+$//e")

@@ -1,0 +1,5 @@
+htop nmap jnettop git curl whois netcat vim-nox vim-snippets neovim tmux vim-addon-manager \
+tmate terminator tldr sysdig zulucrypt-cli zulumount-cli tcpdump unrar tor vlc gimp \
+gimp-data-extras chromium-browser firefox build-essential libssl-dev docker.io docker-compose \
+tig bat transmission-gtk strace anki bb bc ethtool ffmpeg iftop imagemagick iptraf-ng \
+jq youtube-dl
