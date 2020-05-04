@@ -1,0 +1,1 @@
+alias tmate='export TERM=xterm && $HOME/src/tmate-2.2.1-static-linux-amd64/tmate'
