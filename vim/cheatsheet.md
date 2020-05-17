@@ -7,6 +7,7 @@
     `SHIFT + j` Move the bottom line to the end of the current one
     `gt` Go to the next tab
     `2gt` Go to the second tab
+    `SHIFT + 8` Search for the word under the cursor
 
 ## NERDTree
     o.......Open files, directories and bookmarks....................|NERDTree-o|
