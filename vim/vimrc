@@ -16,15 +16,14 @@ set expandtab " On pressing tab, insert 4 spaces
 set smarttab
 set autoindent
 set cursorline
-set ttyfast                                             " Improves scroll performance
-set ignorecase                                          " Case insensitive searches
-set hlsearch                                            " Highlight search results
-set incsearch                                           " Incremental searches
+set ttyfast " Improves scroll performance
+set ignorecase " Case insensitive searches
+set hlsearch " Highlight search results
+set incsearch " Incremental searches
 
 " folding
 set foldmethod=indent
 set foldlevel=99
-" set foldclose=all
 
 set list
 set listchars=tab:▸\ ,eol:¬
@@ -67,7 +66,7 @@ map <Space> <Leader>
 " clear search highlight
 nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 
-""""""""""""""""""""""""
+"""""""""""""""""""""""""
 " plugins configuration "
 """""""""""""""""""""""""
 set rtp+=~/.vim/bundle/Vundle.vim " set the runtime path to include Vundle and initialize
@@ -103,9 +102,9 @@ map ; :Files<CR> " use ; to search project files
 Plugin 'hynek/vim-python-pep8-indent' " Python linter
 Plugin 'mkitt/tabline.vim' " Configure tabs within Terminal Vim
 
-Plugin 'arcticicestudio/nord-vim'
-Plugin 'wincent/terminus'
-Plugin 'terryma/vim-multiple-cursors'
+Plugin 'arcticicestudio/nord-vim' " nord colorscheme
+Plugin 'wincent/terminus' " apply some terminal improvements like cursor, insert paste
+Plugin 'terryma/vim-multiple-cursors' " multiple cursor feature
 let g:multi_cursor_start_word_key      = '<C-n>'
 let g:multi_cursor_select_all_word_key = '<C-w>'
 "let g:multi_cursor_start_key           = 'g<C-n>'
