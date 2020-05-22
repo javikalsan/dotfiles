@@ -26,8 +26,8 @@ set foldmethod=indent
 set foldlevel=99
 " set foldclose=all
 
-" list
-" set list
+set list
+set listchars=tab:▸\ ,eol:¬
 " set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:⏎,precedes:«,extends:»
 
 " Use 2 spaces to indent JS and Typescript files
