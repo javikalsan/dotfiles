@@ -12,6 +12,7 @@
     `=`: when VISUAL selection autoident
 
 ## NERDTree
+    m.......Open NerdTreeMenu, in a NERDTree active pane
     o.......Open files, directories and bookmarks....................|NERDTree-o|
     go......Open selected file, but leave cursor in the NERDTree.....|NERDTree-go|
     t.......Open selected node/bookmark in a new tab.................|NERDTree-t|
