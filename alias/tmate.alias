@@ -1,1 +1,1 @@
-alias tmate='export TERM=xterm && tmate -f ~/.tmux.conf'
+alias tmate='tmate -f ~/.tmux.conf'
