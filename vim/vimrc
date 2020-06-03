@@ -99,14 +99,14 @@ Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fzf
 Plugin 'junegunn/fzf.vim'
 map ; :Files<CR> " use ; to search project files
 
-Plugin 'hynek/vim-python-pep8-indent' " Python linter
+"Plugin 'hynek/vim-python-pep8-indent' " Python linter
 Plugin 'mkitt/tabline.vim' " Configure tabs within Terminal Vim
 
 Plugin 'arcticicestudio/nord-vim' " nord colorscheme
 Plugin 'wincent/terminus' " apply some terminal improvements like cursor, insert paste
 Plugin 'terryma/vim-multiple-cursors' " multiple cursor feature
 let g:multi_cursor_start_word_key      = '<C-n>'
-let g:multi_cursor_select_all_word_key = '<C-w>'
+let g:multi_cursor_select_all_word_key = '<C-a>'
 "let g:multi_cursor_start_key           = 'g<C-n>'
 "let g:multi_cursor_select_all_key      = 'g<A-n>'
 "let g:multi_cursor_next_key            = '<C-n>'
@@ -114,8 +114,13 @@ let g:multi_cursor_select_all_word_key = '<C-w>'
 "let g:multi_cursor_skip_key            = '<C-x>'
 "let g:multi_cursor_quit_key            = '<Esc>'
 
-Plugin 'tpope/vim-commentary'
-Plugin 'ryanoasis/vim-devicons'
+Plugin 'tpope/vim-commentary' " block comment with gc shortcut
+Plugin 'ryanoasis/vim-devicons' " use dev icons
+Plugin 'dense-analysis/ale' " ale code linter
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '.'
+"let g:ale_python_pylint_options = "--init-hook='import sys; sys.path.append(\".\")'"
+
 
 call vundle#end()
 
@@ -124,7 +129,8 @@ call vundle#end()
 """""""""""""""""""""""
 set background=dark
 "colorscheme material-monokai
-colorscheme nord
+"colorscheme nord
+colorscheme gruvbox
 
 """""""""""""
 " functions "
