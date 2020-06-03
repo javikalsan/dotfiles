@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 
 # Install operating system dependencies
 sudo apt-get install --assume-yes vim-nox vim-gtk editorconfig libx11-dev make gcc
