@@ -11,6 +11,12 @@
     `:Colors` Show and select vim available colorschemes
     `=`: when VISUAL selection autoident
 
+## fzf
+### search
+    `;` search files from current folder
+    `CTRL + t` open the current selected file in a tab
+    `CTRL + v` open the current selected file vertical splitted
+
 ## NERDTree
     m.......Open NerdTreeMenu, in a NERDTree active pane
     o.......Open files, directories and bookmarks....................|NERDTree-o|
