@@ -122,6 +122,7 @@ let g:ale_sign_warning = '.'
 " let b:ale_linters =  {'python': ['flake8']}
 
 Plugin 'fatih/vim-go' " Go development plugin for Vim
+Plugin 'MattesGroeger/vim-bookmarks' " Bookmarks plugin for Vim
 
 call vundle#end()
 
