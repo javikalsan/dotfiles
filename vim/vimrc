@@ -119,8 +119,9 @@ Plugin 'ryanoasis/vim-devicons' " use dev icons
 Plugin 'dense-analysis/ale' " ale code linter
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
-"let g:ale_python_pylint_options = "--init-hook='import sys; sys.path.append(\".\")'"
+" let b:ale_linters =  {'python': ['flake8']}
 
+Plugin 'fatih/vim-go' " Go development plugin for Vim
 
 call vundle#end()
 
