@@ -10,6 +10,7 @@
     `*` Search for the word under the cursor
     `:Colors` Show and select vim available colorschemes
     `=`: when VISUAL selection autoident
+    `CTRL + O` and `CTRL + I` or The jumplist or Friggin Vim Time Machine.
 
 ## fzf
 ### search
