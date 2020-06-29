@@ -14,6 +14,9 @@
     `%` go to close/open symbol {} [] ...
     `ESC > 1 > CTRL + G` display the absolute path of the current buffer
 
+## custom
+    `leader + f` NerdTreeFind, open NerdTree at the current buffer tree level
+
 ## jedi
     `leader + d`: go to a method definition
 
