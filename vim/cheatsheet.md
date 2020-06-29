@@ -9,8 +9,13 @@
     `2gt` Go to the second tab
     `*` Search for the word under the cursor
     `:Colors` Show and select vim available colorschemes
-    `=`: when VISUAL selection autoident
+    `=` when VISUAL selection autoident
     `CTRL + O` and `CTRL + I` or The jumplist or Friggin Vim Time Machine.
+    `%` go to close/open symbol {} [] ...
+    `ESC > 1 > CTRL + G` display the absolute path of the current buffer
+
+## jedi
+    `leader + d`: go to a method definition
 
 ## fzf
 ### search
