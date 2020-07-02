@@ -13,6 +13,7 @@
     `CTRL + O` and `CTRL + I` or The jumplist or Friggin Vim Time Machine.
     `%` go to close/open symbol {} [] ...
     `ESC > 1 > CTRL + G` display the absolute path of the current buffer
+    `gd` search all ocurrences in buffer for current cursor position
 
 ## custom
     `leader + f` NerdTreeFind, open NerdTree at the current buffer tree level
