@@ -95,9 +95,11 @@ Plugin 'jaxbot/semantic-highlight.vim' " semantic highlight
 Plugin 'ervandew/supertab' " supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs (:help ins-completion)
 Plugin 'davidhalter/jedi-vim' " awesome Python autocompletion with VIM
 Plugin 'honza/vim-snippets' " this repository contains snippets files for various programming languages
+
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fzf
 Plugin 'junegunn/fzf.vim'
-map ; :Files<CR> " use ; to search project files
+map ; :FZF<CR> " use ; to search project files
+let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,1 --preview 'batcat --color=always --style=header,grid --line-range :300 {}'"
 
 "Plugin 'hynek/vim-python-pep8-indent' " Python linter
 Plugin 'mkitt/tabline.vim' " Configure tabs within Terminal Vim
