@@ -118,6 +118,7 @@ let g:multi_cursor_select_all_word_key = '<C-a>'
 
 Plugin 'tpope/vim-commentary' " block comment with gc shortcut
 Plugin 'ryanoasis/vim-devicons' " use dev icons
+
 Plugin 'dense-analysis/ale' " ale code linter
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
@@ -126,14 +127,22 @@ let g:ale_sign_warning = '.'
 Plugin 'fatih/vim-go' " Go development plugin for Vim
 Plugin 'MattesGroeger/vim-bookmarks' " Bookmarks plugin for Vim
 
+Plugin 'majutsushi/tagbar' " Tagsbar
+nmap <F8> :TagbarToggle<CR>
+let g:tagbar_width=45
+let g:tagbar_autofocus=1
+let g:tagbar_expand=1
+let g:tagbar_singleclick=1
+let g:tagbar_autoshowtag=1
+
+Plugin 'ludovicchabant/vim-gutentags'
+
 call vundle#end()
 
 """""""""""""""""""""""
 " theme configuration "
 """""""""""""""""""""""
 set background=dark
-"colorscheme material-monokai
-"colorscheme nord
 colorscheme gruvbox
 
 """""""""""""
@@ -156,4 +165,6 @@ autocmd BufWritePre * :call Preserve("%s/\\s\\+$//e")
 " commands  "
 """""""""""""
 "command Mambo ! mamba -f documentation %:p
-nnoremap <F9> :! mamba -f documentation %:p
+nnoremap <F4> :Rg<CR>
+nnoremap <F3> <C-]><CR>
+nnoremap <F2> :! mamba -f documentation %:p<CR>
