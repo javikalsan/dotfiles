@@ -128,7 +128,7 @@ Plugin 'fatih/vim-go' " Go development plugin for Vim
 Plugin 'MattesGroeger/vim-bookmarks' " Bookmarks plugin for Vim
 
 Plugin 'majutsushi/tagbar' " Tagsbar
-nmap <F8> :TagbarToggle<CR>
+nmap <F12> :TagbarToggle<CR>
 let g:tagbar_width=45
 let g:tagbar_autofocus=1
 let g:tagbar_expand=1
