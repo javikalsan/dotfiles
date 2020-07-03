@@ -161,10 +161,22 @@ endfunction
 
 autocmd BufWritePre * :call Preserve("%s/\\s\\+$//e")
 
+" open tag in new tab
+function! TagInNewTab()
+    let word = expand("<cword>")
+    redir => tagsfiles
+    silent execute 'set tags'
+    redir END
+    tabe
+    execute 'setlocal' . strpart(tagsfiles, 2)
+    execute 'tag ' . word
+endfunction
+
+
 """""""""""""
 " commands  "
 """""""""""""
 "command Mambo ! mamba -f documentation %:p
 nnoremap <F4> :Rg<CR>
-nnoremap <F3> <C-]><CR>
+nnoremap <F3> :call TagInNewTab()<CR>
 nnoremap <F2> :! mamba -f documentation %:p<CR>
