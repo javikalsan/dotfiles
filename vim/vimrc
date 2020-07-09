@@ -180,3 +180,4 @@ endfunction
 nnoremap <F4> :Rg<CR>
 nnoremap <F3> :call TagInNewTab()<CR>
 nnoremap <F2> :! mamba -f documentation %:p<CR>
+nnoremap <F8> :%s/\<<C-r><C-w>\>//g<Left><Left>
