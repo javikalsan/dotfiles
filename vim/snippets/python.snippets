@@ -1,0 +1,14 @@
+snippet mamba
+# -*- coding: utf-8 -*-¬
+from mamba import description, context, it, before
+from doublex import Spy, when, ANY_ARG
+from expects import expect, equal, start_with, contain, be_empty, be_none
+from doublex_expects import have_been_called_with, have_been_called
+
+
+with description("$1"):
+    with context("$2"):
+        with it("$3"):
+            pass
+
+endsnippet
