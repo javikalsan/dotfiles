@@ -76,6 +76,7 @@ Plugin 'VundleVim/Vundle.vim' " plugins manager
 Plugin 'scrooloose/nerdtree' " file browser
 noremap <c-X> :NERDTreeToggle<CR>
 nnoremap <Leader>f :NERDTreeFind<Enter>
+let NERDTreeIgnore = ['\.pyc$']
 
 map  <C-t> :tabnew<CR>
 nnoremap <C-Left> :tabprevious<CR>
