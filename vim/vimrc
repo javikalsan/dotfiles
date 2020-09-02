@@ -27,7 +27,6 @@ set foldlevel=99
 
 set list
 set listchars=tab:▸\ ,eol:¬
-" set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:⏎,precedes:«,extends:»
 
 " Use 2 spaces to indent JS and Typescript files
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab
@@ -82,53 +81,33 @@ map  <C-t> :tabnew<CR>
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 
-"Plugin 'klen/python-mode' " python mode
-let g:pymode_options_colorcolumn = 0
-
 Plugin 'bling/vim-airline' " lean & mean status/tabline for vim that's light as air
-"let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
-"Plugin 'jiangmiao/auto-pairs' " insert or delete brackets, parens, quotes in pair
 Plugin 'airblade/vim-gitgutter' " git diff in the 'gutter' (sign column)
 Plugin 'skielbasa/vim-material-monokai' " monokai theme
 Plugin 'jaxbot/semantic-highlight.vim' " semantic highlight
 Plugin 'ervandew/supertab' " supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs (:help ins-completion)
 Plugin 'davidhalter/jedi-vim' " awesome Python autocompletion with VIM
 Plugin 'honza/vim-snippets' " this repository contains snippets files for various programming languages
-
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fzf
 Plugin 'junegunn/fzf.vim'
 map ; :FZF<CR> " use ; to search project files
 let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,1 --preview 'batcat --color=always --style=header,grid --line-range :300 {}'"
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
 
-"Plugin 'hynek/vim-python-pep8-indent' " Python linter
 Plugin 'mkitt/tabline.vim' " Configure tabs within Terminal Vim
-
 Plugin 'arcticicestudio/nord-vim' " nord colorscheme
 Plugin 'wincent/terminus' " apply some terminal improvements like cursor, insert paste
-Plugin 'terryma/vim-multiple-cursors' " multiple cursor feature
-let g:multi_cursor_start_word_key      = '<C-n>'
-let g:multi_cursor_select_all_word_key = '<C-a>'
-"let g:multi_cursor_start_key           = 'g<C-n>'
-"let g:multi_cursor_select_all_key      = 'g<A-n>'
-"let g:multi_cursor_next_key            = '<C-n>'
-"let g:multi_cursor_prev_key            = '<C-p>'
-"let g:multi_cursor_skip_key            = '<C-x>'
-"let g:multi_cursor_quit_key            = '<Esc>'
-
+Plugin 'mg979/vim-visual-multi', {'branch': 'master'} " multicursor
 Plugin 'tpope/vim-commentary' " block comment with gc shortcut
 Plugin 'ryanoasis/vim-devicons' " use dev icons
-
 Plugin 'dense-analysis/ale' " ale code linter
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
-" let b:ale_linters =  {'python': ['flake8']}
 
 Plugin 'fatih/vim-go' " Go development plugin for Vim
 Plugin 'MattesGroeger/vim-bookmarks' " Bookmarks plugin for Vim
-
 Plugin 'majutsushi/tagbar' " Tagsbar
 nmap <F12> :TagbarToggle<CR>
 let g:tagbar_width=45
@@ -138,7 +117,6 @@ let g:tagbar_singleclick=1
 let g:tagbar_autoshowtag=1
 
 Plugin 'ludovicchabant/vim-gutentags' " autogen tags
-
 Plugin 'SirVer/ultisnips' " snippets
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -182,7 +160,6 @@ function! TagInNewTab()
     execute 'setlocal' . strpart(tagsfiles, 2)
     execute 'tag ' . word
 endfunction
-
 
 """""""""""""
 " commands  "
