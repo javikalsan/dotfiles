@@ -14,6 +14,8 @@
     `%` go to close/open symbol {} [] ...
     `ESC > 1 > CTRL + G` display the absolute path of the current buffer
     `gd` search all ocurrences in buffer for current cursor position
+    `U` uppercar `u` lowercase in VISUAL mode
+    `SHIFT + V` select current line
 
 ## custom
     `leader + f` NerdTreeFind, open NerdTree at the current buffer tree level
