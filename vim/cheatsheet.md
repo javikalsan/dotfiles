@@ -16,6 +16,7 @@
     `gd` search all ocurrences in buffer for current cursor position
     `U` uppercar `u` lowercase in VISUAL mode
     `SHIFT + V` select current line
+    `:tabmove` move current tab to number position, without arg goes to the trailing position
 
 ## custom
     `leader + f` NerdTreeFind, open NerdTree at the current buffer tree level
