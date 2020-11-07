@@ -139,6 +139,9 @@ Plugin 'hynek/vim-python-pep8-indent'
 " Ctrl + P
 Plugin 'ctrlpvim/ctrlp.vim'
 
+" Gruvbox colorscheme
+Plugin 'morhetz/gruvbox'
+
 call vundle#end()
 
 """""""""""""""""""""""
