@@ -24,6 +24,7 @@ set incsearch " Incremental searches
 " folding
 set foldmethod=indent
 set foldlevel=99
+nnoremap <space> za
 
 set list
 set listchars=tab:▸\ ,eol:¬
@@ -59,9 +60,6 @@ nnoremap <Leader>9 9gt
 " map copy to clipboard to be CTRL + C
 :vmap <C-C> "+y
 
-" map space key as leader
-map <Space> <Leader>
-
 " clear search highlight
 nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 
@@ -88,7 +86,7 @@ Plugin 'airblade/vim-gitgutter' " git diff in the 'gutter' (sign column)
 Plugin 'skielbasa/vim-material-monokai' " monokai theme
 Plugin 'jaxbot/semantic-highlight.vim' " semantic highlight
 Plugin 'ervandew/supertab' " supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs (:help ins-completion)
-Plugin 'davidhalter/jedi-vim' " awesome Python autocompletion with VIM
+" Plugin 'davidhalter/jedi-vim' " awesome Python autocompletion with VIM
 Plugin 'honza/vim-snippets' " this repository contains snippets files for various programming languages
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fzf
 Plugin 'junegunn/fzf.vim'
@@ -103,8 +101,17 @@ Plugin 'mg979/vim-visual-multi', {'branch': 'master'} " multicursor
 Plugin 'tpope/vim-commentary' " block comment with gc shortcut
 Plugin 'ryanoasis/vim-devicons' " use dev icons
 Plugin 'dense-analysis/ale' " ale code linter
-let g:ale_sign_error = '●'
-let g:ale_sign_warning = '.'
+
+let g:ale_linters = {
+\   'python': ['pylint'],
+\}
+highlight ALEErrorSign ctermbg=234 ctermfg=9
+highlight ALEError ctermfg=234 cterm=underline
+highlight ALEWarningSign ctermbg=234 ctermfg=226
+let g:ale_sign_error = 'X'
+let g:ale_sign_warning = '!'
+let g:ale_set_highlights = 0
+
 
 Plugin 'fatih/vim-go' " Go development plugin for Vim
 Plugin 'MattesGroeger/vim-bookmarks' " Bookmarks plugin for Vim
@@ -125,6 +132,12 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetDirectories=["~/code/dotfiles/vim/snippets/"]
+
+" A nicer Python indentation style
+Plugin 'hynek/vim-python-pep8-indent'
+
+" Ctrl + P
+Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end()
 
