@@ -1,6 +1,8 @@
 """"""""""""""""""""""
 " base configuration "
 """"""""""""""""""""""
+let mapleader = ',' " Map leader key to comma
+
 set number " Show line number
 set nocompatible
 syntax on " Syntax highlighting
@@ -57,6 +59,8 @@ nnoremap <Leader>7 7gt
 nnoremap <Leader>8 8gt
 nnoremap <Leader>9 9gt
 
+nnoremap <Leader>t <Esc>:tabnew<CR>
+
 " map copy to clipboard to be CTRL + C
 :vmap <C-C> "+y
 
@@ -71,8 +75,8 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim' " plugins manager
 Plugin 'scrooloose/nerdtree' " file browser
-noremap <c-X> :NERDTreeToggle<CR>
-nnoremap <Leader>f :NERDTreeFind<Enter>
+noremap <C-X> :NERDTreeToggle<CR>
+nnoremap <C-F> :NERDTreeFind<Enter>
 let NERDTreeIgnore = ['\.pyc$']
 
 map  <C-t> :tabnew<CR>
@@ -84,6 +88,7 @@ let g:airline_powerline_fonts = 1
 
 Plugin 'airblade/vim-gitgutter' " git diff in the 'gutter' (sign column)
 Plugin 'skielbasa/vim-material-monokai' " monokai theme
+Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'jaxbot/semantic-highlight.vim' " semantic highlight
 Plugin 'ervandew/supertab' " supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs (:help ins-completion)
 " Plugin 'davidhalter/jedi-vim' " awesome Python autocompletion with VIM
@@ -142,12 +147,16 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " Gruvbox colorscheme
 Plugin 'morhetz/gruvbox'
 
+" Surround text
+Plugin 'tpope/vim-surround'
+
 call vundle#end()
 
 """""""""""""""""""""""
 " theme configuration "
 """""""""""""""""""""""
 set background=dark
+" set background=light
 colorscheme gruvbox
 
 """""""""""""
