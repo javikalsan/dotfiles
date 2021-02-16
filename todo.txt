@@ -1,2 +1,0 @@
-
-- write in vim config path to snippets
