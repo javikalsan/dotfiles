@@ -18,7 +18,7 @@ PAGES=$((($TOTAL_REPOSITORIES+($TOTAL_REPOSITORIES-1))/$ITEMS_PER_PAGE))
 mkdir -p $CODE_DIRECTORY
 cd $CODE_DIRECTORY
 for PAGE in $(seq 1 $PAGES); do
-    REPOS=`curl "${CURL_OPTIONS[@]}" "$GITHUB_ORGS_API_BASE_URL$ORG_NAME/repos?per_page=100&page=$PAGE" | grep ssh_url | sed -r "s/.*$ORG_NAME\/([^\"]*).*/\1/"`
+    REPOS=`curl "${CURL_OPTIONS[@]}" "$GITHUB_ORGS_API_BASE_URL$ORG_NAME/repos?per_page=$ITEMS_PER_PAGE&page=$PAGE" | grep ssh_url | sed -r "s/.*$ORG_NAME\/([^\"]*).*/\1/"`
     for REPO in $REPOS; do
         git clone $REPOSITORY_BASE_URL$REPO
         echo "done!"
