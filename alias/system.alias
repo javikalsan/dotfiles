@@ -6,3 +6,4 @@ alias ssh='TERM=xterm ssh'
 alias bat='batcat'
 alias view-all-sockets-real-time='watch ss -tapno'
 alias view-listening-sockets-real-time='watch ss -tlpn'
+alias sl="tail -f /var/log/syslog"
