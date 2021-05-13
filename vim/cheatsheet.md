@@ -17,6 +17,8 @@
     `U` uppercar `u` lowercase in VISUAL mode
     `SHIFT + V` select current line
     `:tabmove` move current tab to number position, without arg goes to the trailing position
+    `:reg` show clipboard registers
+    `"{Number of register}p` Paste the {number of register} clipboard register
 
 ## custom
     `leader + f` NerdTreeFind, open NerdTree at the current buffer tree level
