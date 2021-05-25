@@ -159,8 +159,15 @@ call vundle#end()
 " theme configuration "
 """""""""""""""""""""""
 set background=dark
-" set background=light
-colorscheme gruvbox
+colorscheme PaperColor
+
+let g:PaperColor_Theme_Options = {
+    \   'language': {
+    \     'python': {
+    \       'highlight_builtins': 1
+    \     }
+    \   }
+    \ }
 
 """""""""""""
 " functions "
