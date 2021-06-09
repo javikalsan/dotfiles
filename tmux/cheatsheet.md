@@ -2,5 +2,5 @@
 
 ## panes
 
-*Sync panes*
-`setw synchronize-panes on`
+*Sync panes* `ALT + q`
+*Unsync panes* `ALT + w`
