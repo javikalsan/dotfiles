@@ -9,7 +9,8 @@ BEGIN
 
     SELECT t.table_name
     FROM information_schema.tables t
-	INNER JOIN information_schema.columns c ON c.table_name = t.table_name  c.table_schema = t.table_schema
+	INNER JOIN information_schema.columns c ON c.table_name = t.table_name
+    WHERE c.column_name = search_field_name
 	AND c.table_schema = t.table_schema
     AND t.table_schema NOT IN ('information_schema', 'pg_catalog')
     AND t.table_type = 'BASE TABLE'
