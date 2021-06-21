@@ -1,0 +1,9 @@
+cache/
+.cache/
+.mozilla/
+.local/
+.nvm/
+.pylint/
+.virtualenvs/
+.vscode/
+.zoom/
