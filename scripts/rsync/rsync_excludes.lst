@@ -7,3 +7,7 @@ cache/
 .virtualenvs/
 .vscode/
 .zoom/
+.PlayOnLinux/
+.audacity-data/
+.cargo/
+.wine/
