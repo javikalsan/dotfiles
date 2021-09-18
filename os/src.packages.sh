@@ -8,6 +8,3 @@ curl -L https://git.io/n-install | bash
 
 # go version manager
 curl -sSL https://git.io/g-install | sh -s
-
-# ohmyzsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
