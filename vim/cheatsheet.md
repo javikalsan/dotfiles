@@ -14,11 +14,13 @@
     `%` go to close/open symbol {} [] ...
     `ESC > 1 > CTRL + G` display the absolute path of the current buffer
     `gd` search all ocurrences in buffer for current cursor position
-    `U` uppercar `u` lowercase in VISUAL mode
+    `U` uppercase `u` lowercase in VISUAL mode
     `SHIFT + V` select current line
     `:tabmove` move current tab to number position, without arg goes to the trailing position
     `:reg` show clipboard registers
     `"{Number of register}p` Paste the {number of register} clipboard register
+    `t+{character} move, to right, to the position before {character}
+    `f+{character} move, to right, to the position of {character}
 
 ## custom
     `leader + f` NerdTreeFind, open NerdTree at the current buffer tree level
