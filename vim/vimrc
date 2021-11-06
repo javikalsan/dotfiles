@@ -95,7 +95,7 @@ Plugin 'davidhalter/jedi-vim' " awesome Python autocompletion with VIM
 Plugin 'honza/vim-snippets' " this repository contains snippets files for various programming languages
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fzf
 Plugin 'junegunn/fzf.vim'
-map ; :FZF<CR> " use ; to search project files
+map ; :FZF<CR>
 let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,1 --preview 'batcat --color=always --style=header,grid --line-range :300 {}'"
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
 
