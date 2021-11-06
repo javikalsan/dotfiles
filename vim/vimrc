@@ -108,7 +108,7 @@ Plugin 'ryanoasis/vim-devicons' " use dev icons
 Plugin 'dense-analysis/ale' " ale code linter
 
 let g:ale_linters = {
-\   'python': ['pylint'],
+\   'python': ['pylint', 'mypy', 'flake8'],
 \}
 highlight ALEErrorSign ctermbg=234 ctermfg=9
 highlight ALEError ctermfg=234 cterm=underline
