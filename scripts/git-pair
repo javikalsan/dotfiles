@@ -37,3 +37,4 @@ if [[ "$TRAILERS" != "" ]] ; then
 	echo -e "\n🧑‍💻Pairing mode enabled. Run 'git unpair' to end session."
 fi
 
+
