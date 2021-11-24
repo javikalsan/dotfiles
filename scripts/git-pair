@@ -2,6 +2,9 @@
 
 set -uf -o pipefail
 
+mkdir -p "$HOME/.config/git/"
+touch "$HOME/.config/git/template"
+
 TEMPLATE_PATH="$HOME/.config/git/template"
 
 if [[ -e "$HOME/.git-pair-colleagues.txt" ]] ; then
@@ -24,9 +27,13 @@ while true ; do
 done
 
 if [[ "$TRAILERS" != "" ]] ; then
-	echo -e "\n" > $TEMPLATE_PATH
-	echo -e "$TRAILERS" >> $TEMPLATE_PATH
+	echo -e "\n" > "$TEMPLATE_PATH"
+	echo -e "$TRAILERS" >> "$TEMPLATE_PATH"
 
-	echo "🧑‍💻Pairing mode enabled. Run 'git unpair' to end session."
+    echo "Don't forget to add to your $HOME/.gitconfig
+                [commit]
+                verbose = true
+                template = ~/.config/git/template"
+	echo -e "\n🧑‍💻Pairing mode enabled. Run 'git unpair' to end session."
 fi
 
