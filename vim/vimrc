@@ -130,7 +130,7 @@ let g:tagbar_autoshowtag=1
 
 Plugin 'ludovicchabant/vim-gutentags' " autogen tags
 Plugin 'SirVer/ultisnips' " snippets
-let g:UltiSnipsExpandTrigger="<f10>"
+let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<C-h>"
 let g:UltiSnipsJumpBackwardTrigger="<C-d>"
 let g:UltiSnipsEditSplit="vertical"
@@ -150,6 +150,15 @@ Plugin 'tpope/vim-surround'
 
 " Open in github
 Plugin 'ruanyl/vim-gh-line'
+
+" sudo apt-get install silversearcher-ag
+Plugin 'mileszs/ack.vim'
+" ------ Ack / ag
+" silver searcher with ack.vim plugin
+let g:ackprg = 'ag --vimgrep --ignore=composer*'
+nnoremap <leader>1 :Ack! '\b<cword>\b'<cr>
+nnoremap <leader>2 :Ack! <cword> <cr>
+
 
 call vundle#end()
 
