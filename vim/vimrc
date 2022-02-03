@@ -67,6 +67,9 @@ nnoremap <Leader>t <Esc>:tabnew<CR>
 " clear search highlight
 nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 
+" execute the marked lines
+vnoremap <CR> : '<. '>!sh<CR>
+
 """""""""""""""""""""""""
 " plugins configuration "
 """""""""""""""""""""""""
