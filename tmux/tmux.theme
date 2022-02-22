@@ -42,8 +42,8 @@ set-option -g status-right-length "80"
 set-window-option -g window-status-separator ""
 
 set-option -g status-left " 🐋 "
-set-option -g status-right "#[bg=colour237,fg=colour239 nobold, nounderscore, noitalics]#[bg=colour239,fg=colour246] #[bg=colour239,fg=colour248,nobold,noitalics,nounderscore] #(curl ifconfig.me) || #(ip route get 1.2.3.4 | awk '{print $7}') #[bg=colour248,fg=colour237] #(hostname) "
+set-option -g status-right "#[bg=colour237,fg=colour239 nobold, nounderscore, noitalics]#[bg=colour239,fg=colour246] #[bg=colour239,fg=colour248,nobold,noitalics,nounderscore] #(curl ifconfig.me) - #(ip route get 1.2.3.4 | awk '{print $7}') #[bg=colour248,fg=colour237] #(hostname) "
 
 set-window-option -g window-status-current-format "#[bg=colour214,fg=colour237,nobold,noitalics,nounderscore]#[bg=colour214,fg=colour239,bold] #W#{?window_zoomed_flag,*Z,} #[bg=colour237,fg=colour214,nobold,noitalics,nounderscore]"
-set-window-option -g window-status-format "#[bg=colour239,fg=colour237,noitalics]#[bg=colour239,fg=colour223] #W #[bg=colour237,fg=colour239,noitalics]"
+set-window-option -g window-status-format "#[bg=colour239,fg=colour237,noitalics]#[bg=colour239,fg=colour237] #W #[bg=colour237,fg=colour239,noitalics]"
 
