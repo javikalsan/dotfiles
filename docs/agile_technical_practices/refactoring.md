@@ -47,5 +47,6 @@ Once all client code is migrated to new code, remove old functionality by removi
 
 ## Deliberate practice: kata
 [Parallel Change code by Pawel Duda and Carlos Blé](https://github.com/unclejamal/parallel-change)
+
 [Kata Parallel Change by Coding is Caring](https://www.youtube.com/watch?v=qjBcyH21Alk)
 
