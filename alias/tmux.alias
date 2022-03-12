@@ -1,3 +1,3 @@
-alias tmux="TERM=screen-256color-bce tmux"
+alias tmux="TERM=xterm-256color tmux"
 alias tmux-system-info="tmux new-session\; split-window -h\; split-window -v \; swap-pane -t 0\; split-window -v\; split-window -v \; send-keys -t 0 htop Enter\; send-keys -t 1 'nmap -P0 localhost' Enter \; send-keys -t 2 'df -h' Enter \; send-keys -t 3 'netstat -tulpen' Enter \; send-keys -t 4 'tail -f /var/log/syslog' Enter \; attach \;"
 alias ta="tmux attach-session -t"
