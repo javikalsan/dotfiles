@@ -11,3 +11,8 @@ cache/
 .audacity-data/
 .cargo/
 .wine/
+.go/
+.config/
+Downloads/
+.npm
+.vim
