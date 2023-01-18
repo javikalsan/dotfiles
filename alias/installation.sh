@@ -1,8 +1,8 @@
-#/bin/sh
+#!/bin/sh
 
 USER_CONFIG_FILE="$HOME/.bashrc"
 MATCH_PATTERN_TEXT="# Load all .alias files from dotfiles"
-DOTFILES_ALIAS_DIRECTORY=`pwd`/alias
+DOTFILES_ALIAS_DIRECTORY=$(pwd)
 LOAD_ALIASES_CODE=$(cat << EOF
 
 # Load all .alias files from dotfiles
@@ -16,8 +16,8 @@ done
 EOF
 );
 
-if ! grep -Fxq "$MATCH_PATTERN_TEXT" $USER_CONFIG_FILE
+if ! grep -Fxq "$MATCH_PATTERN_TEXT" "$USER_CONFIG_FILE"
 then
-    echo -e "$LOAD_ALIASES_CODE" >> $USER_CONFIG_FILE
-    source $USER_CONFIG_FILE
+    echo -e "$LOAD_ALIASES_CODE" >> "$USER_CONFIG_FILE"
+    source "$USER_CONFIG_FILE"
 fi
