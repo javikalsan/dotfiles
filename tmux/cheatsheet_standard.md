@@ -10,6 +10,7 @@
 
 *create new* `CTRL + c`
 *go to window number* `CTRL + b + number`
+*move window* `CTRL + b + .` and place the tab number destination
 
 
 ## panes

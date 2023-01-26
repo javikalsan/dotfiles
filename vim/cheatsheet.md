@@ -3,6 +3,7 @@
 ## default
     `:svp file` Open a file in a vertical splitted pane
     `CTRL + W` Switch between open panes
+    `CTRL + w + L` Flip vsplit pane
     `m6` Move current line to line 6
     `SHIFT + j` Move the bottom line to the end of the current one
     `gt` Go to the next tab
