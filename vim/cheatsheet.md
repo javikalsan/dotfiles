@@ -22,6 +22,7 @@
     `"{Number of register}p` Paste the {number of register} clipboard register
     `t+{character} move, to right, to the position before {character}
     `f+{character} move, to right, to the position of {character}
+    `cs"'` Change surrounding quotes, double by single
 
 ## custom
     `leader + f` NerdTreeFind, open NerdTree at the current buffer tree level

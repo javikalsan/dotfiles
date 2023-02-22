@@ -19,3 +19,7 @@
 *horizontal split* `CTRL + b + "`
 *go to next pane* `CTRL + b + o`
 
+
+## buffer
+
+*search in scroll buffer/stdout* `CTRL + b + [ and CTRL + s`
