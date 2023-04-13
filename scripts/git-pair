@@ -6,6 +6,7 @@ mkdir -p "$HOME/.config/git/"
 touch "$HOME/.config/git/template"
 
 TEMPLATE_PATH="$HOME/.config/git/template"
+TEMPLATE_EMOJIS="# 🏗️ build 🔧 ci 📝 docs ✨ feat 🐛 fix ⚡️ perf ♻️ refactor 🎨 style ✅ test 🚧 wip 🌐 loc"
 
 if [[ -e "$HOME/.git-pair-colleagues.txt" ]] ; then
 	COLLEAGUES="$(cat $HOME/.git-pair-colleagues.txt)"
@@ -27,14 +28,14 @@ while true ; do
 done
 
 if [[ "$TRAILERS" != "" ]] ; then
-	echo -e "\n" > "$TEMPLATE_PATH"
+	echo -e "$TEMPLATE_EMOJIS" > "$TEMPLATE_PATH"
+	echo -e "\n" >> "$TEMPLATE_PATH"
 	echo -e "$TRAILERS" >> "$TEMPLATE_PATH"
 
     echo "Don't forget to add to your $HOME/.gitconfig
                 [commit]
                 verbose = true
                 template = ~/.config/git/template"
-	echo -e "\n🧑‍💻Pairing mode enabled. Run 'git unpair' to end session."
+	echo -e "\n👧🧑‍💻Pairing mode enabled. Run 'git unpair' to end session."
 fi
-
 

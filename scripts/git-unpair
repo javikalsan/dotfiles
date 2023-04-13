@@ -3,5 +3,5 @@
 set -euf -o pipefail
 
 echo > "$HOME/.config/git/template"
-echo "👋 Disabled pairing mode."
+echo "👋 Pairing mode disabled."
 
