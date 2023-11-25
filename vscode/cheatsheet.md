@@ -23,3 +23,13 @@
 *Duplicate line* `CTRL + ALT + SHIFT + down`
 
 *Fold/Unfold* `CTRL + SHIFT + []`
+
+
+## Refactoring
+
+*Show available refactors for a selected block of code* `CTRL + SHIFT + R`
+
+*Rename symbol - only for current file* `F2`
+
+*Replace in files, like rename symbol but for all files* `CTRL + SHIFT + H`
+
