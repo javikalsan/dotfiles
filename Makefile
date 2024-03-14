@@ -8,18 +8,16 @@ help:
 	@echo "#########################"
 	@printf "Available commands: \n	all:	Install all components\n\
 		alias:	Install alias component\n\
-		tmux:	Install tmux component\n\
-		install-vim:	Install vim\n"
+		install-tmux:	Install tmux configuration files\n\
+		install-vim:	Install vim configuration files and plugins\n"
 
 alias_execution:
 	@./alias/installation.sh
 
 alias: alias_execution
 
-tmux_execution:
-	@ln -s `pwd`/tmux/tmux.conf $(HOME)/.tmux.conf
-
-tmux: tmux_execution
+install-tmux:
+	@cd ./stowed && stow -t "$(HOME)" tmux
 
 install-vim:
 	@cd ./stowed && stow -t "$(HOME)" vim
@@ -27,4 +25,4 @@ install-vim:
 
 all: alias_execution tmux_execution vim_execution
 
-.PHONY: default alias tmux install-vim	all
+.PHONY: default alias install-tmux install-vim all

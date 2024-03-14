@@ -1,0 +1,21 @@
+# reload config file (change file location to your the tmux.conf you want to use)
+bind r source-file ~/.tmux.conf
+
+# Enable mouse support
+set-window-option -g mouse on
+set-option -g mouse on
+
+# Don't rename windows automatically
+set-option -g allow-rename off
+
+# Fix escape for the sake of vim
+set -sg escape-time 0
+
+# Set history  limit
+set -g history-limit 25000
+
+# don't rename windows automatically
+set-option -g allow-rename off
+
+# move between words in term with ctrl + arrows
+set-window-option -g xterm-keys on
