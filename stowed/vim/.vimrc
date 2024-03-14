@@ -1,0 +1,221 @@
+""""""""""""""""""""""
+" base configuration "
+""""""""""""""""""""""
+let mapleader = ',' " Map leader key to comma
+
+set number " Show line number
+set nocompatible
+syntax on " Syntax highlighting
+set nowrap " Do not wrap long lines
+set encoding=utf8 " UTF-8 encoding
+set ruler
+set mouse=a " Automatically enable mouse usage
+filetype plugin indent on
+set tabstop=4 " show existing tab with 4 spaces width
+set softtabstop=4
+set shiftwidth=4 " when indenting with '>', use 4 spaces width
+set expandtab " On pressing tab, insert 4 spaces
+set smarttab
+set autoindent
+set cursorline
+set ttyfast " Improves scroll performance
+set ignorecase " Case insensitive searches
+set hlsearch " Highlight search results
+set incsearch " Incremental searches
+
+" folding
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
+
+set list
+set listchars=tab:▸\ ,eol:¬
+
+" Use 2 spaces to indent JS and Typescript files
+autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab
+autocmd Filetype typescript setlocal ts=2 sw=2 sts=0 expandtab
+
+"""""""""""""""
+" key mapping "
+"""""""""""""""
+" Fix behavior in insert mode inside tmux session
+nnoremap <Esc>A <up>
+nnoremap <Esc>B <down>
+nnoremap <Esc>C <right>
+nnoremap <Esc>D <left>
+inoremap <Esc>A <up>
+inoremap <Esc>B <down>
+inoremap <Esc>C <right>
+inoremap <Esc>D <left>
+
+" go to tabs
+nnoremap <Leader>1 1gt
+nnoremap <Leader>2 2gt
+nnoremap <Leader>3 3gt
+nnoremap <Leader>4 4gt
+nnoremap <Leader>5 5gt
+nnoremap <Leader>6 6gt
+nnoremap <Leader>7 7gt
+nnoremap <Leader>8 8gt
+nnoremap <Leader>9 9gt
+
+nnoremap <Leader>t <Esc>:tabnew<CR>
+
+" map copy to clipboard to be CTRL + C
+:vmap <C-C> "+y
+
+" clear search highlight
+nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+
+" execute the marked lines
+vnoremap <CR> : '<. '>!sh<CR>
+
+"""""""""""""""""""""""""
+" plugins configuration "
+"""""""""""""""""""""""""
+set rtp+=~/.vim/bundle/Vundle.vim " set the runtime path to include Vundle and initialize
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim' " plugins manager
+Plugin 'scrooloose/nerdtree' " file browser
+noremap <C-X> :NERDTreeToggle<CR>
+nnoremap <C-F> :NERDTreeFind<Enter>
+let NERDTreeIgnore = ['\.pyc$']
+
+map  <C-t> :tabnew<CR>
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+
+Plugin 'bling/vim-airline' " lean & mean status/tabline for vim that's light as air
+let g:airline_powerline_fonts = 1
+
+Plugin 'tpope/vim-fugitive'
+Plugin 'skielbasa/vim-material-monokai' " monokai theme
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'jaxbot/semantic-highlight.vim' " semantic highlight
+Plugin 'ervandew/supertab' " supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs (:help ins-completion)
+Plugin 'davidhalter/jedi-vim' " awesome Python autocompletion with VIM
+Plugin 'honza/vim-snippets' " this repository contains snippets files for various programming languages
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fzf
+Plugin 'junegunn/fzf.vim'
+map ; :FZF<CR>
+let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,1 --preview 'batcat --color=always --style=header,grid --line-range :300 {}'"
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
+
+Plugin 'mkitt/tabline.vim' " Configure tabs within Terminal Vim
+Plugin 'arcticicestudio/nord-vim' " nord colorscheme
+Plugin 'wincent/terminus' " apply some terminal improvements like cursor, insert paste
+Plugin 'mg979/vim-visual-multi', {'branch': 'master'} " multicursor
+Plugin 'tpope/vim-commentary' " block comment with gc shortcut
+Plugin 'ryanoasis/vim-devicons' " use dev icons
+Plugin 'dense-analysis/ale' " ale code linter
+
+let g:ale_linters = {
+\   'python': ['pylint', 'mypy', 'flake8'],
+\}
+highlight ALEErrorSign ctermbg=234 ctermfg=9
+highlight ALEError ctermfg=234 cterm=underline
+highlight ALEWarningSign ctermbg=234 ctermfg=226
+let g:ale_sign_error = 'X'
+let g:ale_sign_warning = '!'
+let g:ale_set_highlights = 0
+
+
+Plugin 'fatih/vim-go' " Go development plugin for Vim
+Plugin 'MattesGroeger/vim-bookmarks' " Bookmarks plugin for Vim
+Plugin 'majutsushi/tagbar' " Tagsbar
+nmap <F12> :TagbarToggle<CR>
+let g:tagbar_width=45
+let g:tagbar_autofocus=1
+let g:tagbar_expand=1
+let g:tagbar_singleclick=1
+let g:tagbar_autoshowtag=1
+
+Plugin 'ludovicchabant/vim-gutentags' " autogen tags
+Plugin 'SirVer/ultisnips' " snippets
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<C-h>"
+let g:UltiSnipsJumpBackwardTrigger="<C-d>"
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetDirectories=["~/code/dotfiles/vim/snippets/"]
+
+" A nicer Python indentation style
+Plugin 'hynek/vim-python-pep8-indent'
+
+" Ctrl + P
+Plugin 'ctrlpvim/ctrlp.vim'
+
+" Gruvbox colorscheme
+Plugin 'morhetz/gruvbox'
+
+" Surround text
+Plugin 'tpope/vim-surround'
+
+" Open in github
+Plugin 'ruanyl/vim-gh-line'
+
+" sudo apt-get install silversearcher-ag
+Plugin 'mileszs/ack.vim'
+" ------ Ack / ag
+" silver searcher with ack.vim plugin
+let g:ackprg = 'ag --vimgrep --ignore=composer*'
+nnoremap <leader>1 :Ack! '\b<cword>\b'<cr>
+nnoremap <leader>2 :Ack! <cword> <cr>
+
+
+call vundle#end()
+
+"""""""""""""""""""""""
+" theme configuration "
+"""""""""""""""""""""""
+set background=dark
+colorscheme PaperColor
+
+let g:PaperColor_Theme_Options = {
+    \   'language': {
+    \     'python': {
+    \       'highlight_builtins': 1
+    \     }
+    \   }
+    \ }
+
+"""""""""""""
+" functions "
+"""""""""""""
+" Remove all trailing spaces on save
+" http://vimcasts.org/episodes/tidying-whitespace
+function! Preserve(command)
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    execute a:command
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+autocmd BufWritePre * :call Preserve("%s/\\s\\+$//e")
+
+" open tag in new tab
+function! TagInNewTab()
+    let word = expand("<cword>")
+    redir => tagsfiles
+    silent execute 'set tags'
+    redir END
+    tabe
+    execute 'setlocal' . strpart(tagsfiles, 2)
+    execute 'tag ' . word
+endfunction
+
+"""""""""""""
+" commands  "
+"""""""""""""
+"command Mambo ! mamba -f documentation %:p
+nnoremap <F4> :Rg<CR>
+nnoremap <F3> :call TagInNewTab()<CR>
+nnoremap <F2> :! mamba -f documentation %:p<CR>
+nnoremap <F8> :%s/\<<C-r><C-w>\>//g<Left><Left>
+
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
