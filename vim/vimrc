@@ -219,3 +219,22 @@ nnoremap <F8> :%s/\<<C-r><C-w>\>//g<Left><Left>
 :command Wq wq
 :command W w
 :command Q q
+
+
+
+ab :feat: ✨
+ab :feature: ✨
+ab :fix: 🐛
+ab :build: 🏗️
+ab :ci: 🔧
+ab :docs: 📝
+ab :perf: ⚡️
+ab :ref: ♻️
+ab :refactor: ♻️
+ab :style: 🎨
+ab :cleanup: 🧹
+ab :test: ✅
+ab :wip: 🚧
+ab :i18n: 🌐
+ab :visual: 💄
+
