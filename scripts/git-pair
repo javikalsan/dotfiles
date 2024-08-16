@@ -6,7 +6,7 @@ mkdir -p "$HOME/.config/git/"
 touch "$HOME/.config/git/template"
 
 TEMPLATE_PATH="$HOME/.config/git/template"
-TEMPLATE_EMOJIS="# 🏗️ build 🔧 ci 📝 docs ✨ feat 🐛 fix ⚡️ perf ♻️ refactor 🎨 style ✅ test 🚧 wip 🌐 loc"
+TEMPLATE_EMOJIS="# 🏗️ build 🔧 ci 📝 docs ✨ feat 🐛 fix ⚡️ perf ♻️ refactor 🎨 style ✅ test 🚧 wip 🌐 loc 🧹cleanup"
 
 if [[ -e "$HOME/.git-pair-colleagues.txt" ]] ; then
 	COLLEAGUES="$(cat $HOME/.git-pair-colleagues.txt)"
