@@ -16,3 +16,4 @@ cache/
 Downloads/
 .npm
 .vim
+.pyenv
