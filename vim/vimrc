@@ -19,7 +19,7 @@ set smarttab
 set autoindent
 set cursorline
 set ttyfast " Improves scroll performance
-set ignorecase " Case insensitive searches
+"set ignorecase " Case insensitive searches
 set hlsearch " Highlight search results
 set incsearch " Incremental searches
 
@@ -90,11 +90,11 @@ Plugin 'bling/vim-airline' " lean & mean status/tabline for vim that's light as 
 let g:airline_powerline_fonts = 1
 
 Plugin 'tpope/vim-fugitive'
-Plugin 'skielbasa/vim-material-monokai' " monokai theme
+"Plugin 'skielbasa/vim-material-monokai' " monokai theme
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'jaxbot/semantic-highlight.vim' " semantic highlight
 Plugin 'ervandew/supertab' " supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs (:help ins-completion)
-Plugin 'davidhalter/jedi-vim' " awesome Python autocompletion with VIM
+" Plugin 'davidhalter/jedi-vim' " awesome Python autocompletion with VIM
 Plugin 'honza/vim-snippets' " this repository contains snippets files for various programming languages
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fzf
 Plugin 'junegunn/fzf.vim'
@@ -103,7 +103,7 @@ let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --ma
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
 
 Plugin 'mkitt/tabline.vim' " Configure tabs within Terminal Vim
-Plugin 'arcticicestudio/nord-vim' " nord colorscheme
+"Plugin 'arcticicestudio/nord-vim' " nord colorscheme
 Plugin 'wincent/terminus' " apply some terminal improvements like cursor, insert paste
 Plugin 'mg979/vim-visual-multi', {'branch': 'master'} " multicursor
 Plugin 'tpope/vim-commentary' " block comment with gc shortcut
@@ -121,7 +121,7 @@ let g:ale_sign_warning = '!'
 let g:ale_set_highlights = 0
 
 
-Plugin 'fatih/vim-go' " Go development plugin for Vim
+"Plugin 'fatih/vim-go' " Go development plugin for Vim
 Plugin 'MattesGroeger/vim-bookmarks' " Bookmarks plugin for Vim
 Plugin 'majutsushi/tagbar' " Tagsbar
 nmap <F12> :TagbarToggle<CR>
@@ -237,4 +237,3 @@ ab :test: ✅
 ab :wip: 🚧
 ab :i18n: 🌐
 ab :visual: 💄
-

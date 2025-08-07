@@ -12,9 +12,9 @@
 
 *Edit multiple occurrences of same word* `CTRL + d`
 
-*Jump back* `CTRL + ALT + -`
+*Navigate/Jump back* `CTRL + ALT + -`
 
-*Jump forward* `CTRL + SHIFT + -`
+*Navigate/Jump forward* `CTRL + SHIFT + -`
 
 *Move line* `ALT + up/down`
 

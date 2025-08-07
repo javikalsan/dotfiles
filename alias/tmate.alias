@@ -1,1 +1,1 @@
-alias tmate='tmate -f ~/.tmux.conf'
+alias tmate='TERM=xterm-256color tmate -f ~/.tmux.conf'
